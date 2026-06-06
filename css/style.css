@@ -1,0 +1,291 @@
+* {
+  box-sizing: border-box;
+}
+
+/* ========== Global Base Styles ========== */
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  color: #f7f7f7;
+  background-image: url("https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/bambo-amaia-benito.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+main {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: 30px 0 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Header layout (brand left, links right) */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  border-bottom: 1px solid #d9d9d9;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  color: #111111;
+}
+
+/* Flexbox nav links + bullet removal */
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.main-nav a {
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 6px;
+  color: #111111;
+}
+
+.main-nav a:hover {
+  background-color: #e7f5df;
+}
+
+.main-nav a[aria-current="page"] {
+  background-color: #bfe6ad;
+}
+
+/* ========== Sections styled (spacing + hierarchy) ========== */
+.hero,
+.page-intro {
+  text-align: center;
+  margin-bottom: 24px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 14px;
+  padding: 18px 16px;
+  backdrop-filter: blur(1px);
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-tagline {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background-color: rgba(0, 0, 0, 0.45);
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.hero-cn {
+  font-size: clamp(4rem, 12vw, 9rem);
+  line-height: 1;
+  margin: 10px 0 6px;
+  text-align: center;
+  font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.55);
+}
+
+.hero-location {
+  margin: 0 0 16px;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.55);
+}
+
+h1 {
+  margin: 0 0 10px;
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.55);
+}
+
+.intro-text,
+.page-intro p {
+  width: min(740px, 100%);
+  margin: 0 auto;
+  line-height: 1.6;
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.55);
+}
+
+.hero img {
+  width: min(780px, 100%);
+  margin: 24px auto 0;
+  border-radius: 12px;
+  border: 1px solid #d9d9d9;
+}
+
+/* ========== Flexbox layout for content groups ========== */
+.attractions-container,
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 22px;
+}
+
+.guide-entries {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ========== Cards/images polished + consistent ========== */
+.attraction-card,
+.guide-card {
+  background: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.attraction-card {
+  width: calc((100% - 22px) / 2);
+}
+
+.guide-card {
+  width: min(900px, 100%);
+}
+
+.attraction-card h2,
+.guide-card h2 {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+  color: #111111;
+  text-shadow: none;
+}
+
+.attraction-card img,
+.guide-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.attraction-card p,
+.guide-card p {
+  line-height: 1.55;
+  color: #1f1f1f;
+  text-shadow: none;
+}
+
+.attraction-card p:last-of-type,
+.guide-card p:last-of-type {
+  flex-grow: 1;
+}
+
+.guide-card a {
+  display: inline-block;
+  margin-top: 8px;
+  font-weight: 700;
+  color: #1d5f2f;
+  text-decoration: none;
+  text-shadow: none;
+}
+
+.guide-card a:hover {
+  text-decoration: underline;
+}
+
+/* Gallery cards (figure + figcaption) */
+.gallery-grid figure {
+  margin: 0;
+  width: calc((100% - 44px) / 3);
+  max-width: 360px;
+  border: 1px solid #e2e2e2;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.gallery-grid figcaption {
+  padding: 10px 12px;
+  line-height: 1.4;
+  color: #1f1f1f;
+  text-shadow: none;
+}
+
+/* Keep nav and cards aligned when space is tighter. */
+@media (max-width: 700px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .main-nav ul {
+    justify-content: flex-start;
+  }
+}
+
+/* Tablet layout tuning for wireframe behavior */
+@media (max-width: 980px) {
+  .gallery-grid figure {
+    width: calc((100% - 22px) / 2);
+  }
+}
+
+/* Phone layout: stack all cards */
+@media (max-width: 760px) {
+  .attraction-card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 680px) {
+  .gallery-grid figure,
+  .attraction-card,
+  .guide-card {
+    width: 100%;
+  }
+
+  .gallery-grid img {
+    height: 220px;
+  }
+}
